@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Chatbot</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<div class="chat-container">
+    
+    <div class="chat-header d-flex justify-content-between align-items-center">
+        <span>School Chatbot 🤖</span>
+
+        <!-- CLEAR BUTTON -->
+        <button id="clear-btn" class="btn btn-danger btn-sm">Clear</button>
+    </div>
+
+    <div class="chat-box" id="chat-box">
+        {% for chat in chat_history %}
+            <div class="user-wrapper">
+                <div class="user-msg">{{ chat.user_message }}</div>
+            </div>
+
+            <div class="bot-wrapper">
+                <div class="bot-msg">{{ chat.bot_response }}</div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <form method="POST" class="input-area">
+        {% csrf_token %}
+        <div class="input-group">
+            <input type="text" name="message" id="message-input" class="form-control" placeholder="Ask something..." required>
+            <button class="btn btn-primary btn-send">Send</button>
+        </div>
+    </form>
+
+</div>
+
+<script>
+    // Auto scroll
+    var chatBox = document.getElementById("chat-box");
+    chatBox.scrollTop = chatBox.scrollHeight;
+
+    // CLEAR CHAT BUTTON FUNCTIONALITY
+    document.getElementById("clear-btn").addEventListener("click", function () {
+        chatBox.innerHTML = "";   // sirf frontend se chat clear hoga
+    });
+</script>
+
+</body>
+</html>
