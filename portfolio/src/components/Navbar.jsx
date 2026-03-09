@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+import { FiMenu} from "react-icons/fi";
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -8,7 +8,7 @@ const Navbar = () => {
       <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
 
         {/* Logo */}
-        <h1 className="text-2xl font-bold">Rahim</h1>
+        <h1 className="text-2xl font-bold">Abdul Rahim</h1>
 
         {/* Desktop Menu */}
         <ul className="hidden md:flex space-x-8 text-lg">
@@ -31,10 +31,10 @@ const Navbar = () => {
 
         {/* Mobile Menu Button */}
         <button
-          className="md:hidden text-2xl"
+          className="md:hidden text-2xl hover:text-blue-400 transition"
           onClick={() => setMenuOpen(!menuOpen)}
         >
-          ☰
+        <FiMenu />
         </button>
       </div>
 
@@ -42,19 +42,19 @@ const Navbar = () => {
       {menuOpen && (
         <ul className="md:hidden bg-gray-800 text-center py-4 space-y-4">
           <li>
-            <a href="#home" onClick={() => setMenuOpen(false)}>Home</a>
+            <a href="#home" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Home</a>
           </li>
           <li>
-            <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+            <a href="#about" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>About</a>
           </li>
           <li>
-            <a href="#skills" onClick={() => setMenuOpen(false)}>Skills</a>
+            <a href="#skills" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Skills</a>
           </li>
           <li>
-            <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+            <a href="#projects" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Projects</a>
           </li>
           <li>
-            <a href="#contact" onClick={() => setMenuOpen(false)}>Contact</a>
+            <a href="#contact" className="hover:text-blue-400 transition" onClick={() => setMenuOpen(false)}>Contact</a>
           </li>
         </ul>
       )}

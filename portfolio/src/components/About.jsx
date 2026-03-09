@@ -1,60 +1,66 @@
 import React from "react";
-import aboutImage from "../assets/images/profile.jpg"; // apni image ka path
 
 const About = () => {
   return (
-    <div className="w-full bg-gray-100 py-20">
+    <div id="about" className="w-full bg-gray-100 py-20">
       <div className="max-w-6xl mx-auto px-6">
 
-        {/* Section Title */}
-        <h2 className="text-4xl font-bold text-center text-gray-800 mb-12">
+        {/* Title */}
+        <h2 className="text-4xl font-bold text-center text-gray-800 mb-8">
           About Me
         </h2>
 
-        <div className="flex flex-col md:flex-row items-center gap-12">
+        {/* Intro */}
+        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-16 text-lg">
+          Hello! I'm <span className="font-semibold">Abdul Rahim</span>, a passionate
+          frontend developer who enjoys building modern and responsive web
+          applications using React and Tailwind CSS. I love solving problems
+          and creating useful web applications.
+        </p>
 
-          {/* Left Image */}
-          <div className="flex-1 flex justify-center">
-            <img
-              src={aboutImage}
-              alt="About"
-              className="w-64 h-64 md:w-80 md:h-80 object-cover rounded-lg shadow-lg"
-            />
+        {/* Mini Projects Section */}
+        <h3 className="text-3xl font-semibold text-center text-gray-800 mb-10">
+          My Mini Projects
+        </h3>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {/* Weather App */}
+          <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition">
+            <h4 className="text-xl font-bold mb-3">Weather App</h4>
+            <p className="text-gray-600 mb-4">
+              A responsive weather application built using React that allows
+              users to check real-time weather conditions of any city.
+            </p>
+            <span className="text-blue-600 font-medium">
+              Tech: React, API
+            </span>
           </div>
 
-          {/* Right Content */}
-          <div className="flex-1 text-center md:text-left">
-
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              Hello! I'm <span className="font-semibold">Abdul Rahim</span>, a passionate
-              frontend developer who loves building modern and responsive web
-              applications. I have experience in HTML, CSS, JavaScript and I
-              enjoy working with modern frameworks like React.
+          {/* Currency Converter */}
+          <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition">
+            <h4 className="text-xl font-bold mb-3">Currency Converter</h4>
+            <p className="text-gray-600 mb-4">
+              A currency converter application that converts different
+              currencies using live exchange rate APIs.
             </p>
-
-            <p className="text-gray-600 text-lg leading-relaxed mb-6">
-              I focus on creating clean UI designs, improving user experience,
-              and writing maintainable code. I am always learning new
-              technologies to improve my development skills.
-            </p>
-
-            {/* Info Grid */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-gray-700 mb-6">
-              <p><span className="font-semibold">Name:</span> Abdul Rahim</p>
-              <p><span className="font-semibold">Email:</span> raheemkhan.rk12345@gmail.com</p>
-              <p><span className="font-semibold">Location:</span> Pakistan</p>
-              <p><span className="font-semibold">Availability:</span> Freelance</p>
-            </div>
-
-            {/* Button */}
-            <a
-              href="#projects"
-              className="inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition"
-            >
-              View My Projects
-            </a>
-
+            <span className="text-blue-600 font-medium">
+              Tech: React, API
+            </span>
           </div>
+
+          {/* School Chatbot */}
+          <div className="bg-white shadow-lg rounded-xl p-6 hover:shadow-2xl transition">
+            <h4 className="text-xl font-bold mb-3">School Chatbot</h4>
+            <p className="text-gray-600 mb-4">
+              A smart chatbot integrated with Dialogflow that helps students
+              get school-related information automatically.
+            </p>
+            <span className="text-blue-600 font-medium">
+              Tech: Dialogflow
+            </span>
+          </div>
+
         </div>
 
       </div>
