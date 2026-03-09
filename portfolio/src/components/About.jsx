@@ -12,9 +12,8 @@ const About = () => {
 
         {/* Intro */}
         <p className="text-center text-gray-600 max-w-3xl mx-auto mb-16 text-lg">
-          Hello! I'm <span className="font-semibold">Abdul Rahim</span>, a passionate
-          frontend developer who enjoys building modern and responsive web
-          applications using React and Tailwind CSS. I love solving problems
+          Hello! I'm <span className="font-semibold">Abdul Rahim</span>, a passionate frontend developer with a strong foundation in <span className="font-semibold"> Software Engineering </span> from 
+         <span className="font-semibold"> Sarhad University of Science and Information Technology, Peshawar</span>. I specialize in building modern, responsive, and user-friendly web applications using <span className="font-semibold"> React </span> and <span className="font-semibold"> Tailwind CSS</span>. I love tackling challenges, crafting efficient solutions, and creating web applications that make a real impact. Always eager to learn and grow, I strive to turn ideas into clean, functional, and visually appealing digital experiences.
           and creating useful web applications.
         </p>
 

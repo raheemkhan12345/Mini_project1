@@ -68,7 +68,8 @@ const Projects = () => {
                 <div className="flex justify-center">
                   <a
                     href={project.github}
-                    className="border border-gray-500 px-4 py-2 rounded-md text-sm hover:bg-gray-800 transition"
+                    target="_blank"
+                    className="border border-gray-500 px-4 py-2 rounded-md text-sm hover:bg-blue-600 border-solid transition"
                   >
                     GitHub
                   </a>
