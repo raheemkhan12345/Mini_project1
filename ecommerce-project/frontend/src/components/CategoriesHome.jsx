@@ -1,7 +1,7 @@
 import React from "react";
 import { categoriesHomeStyles } from "../assets/dummyStyles";
 import brands from "../assets/CategoriesHomedata";
-import { Link } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const CategoriesHome = () => {
@@ -52,6 +52,18 @@ const CategoriesHome = () => {
                     className={categoriesHomeStyles.image}
                   />
                 </div>
+                <div className={categoriesHomeStyles.cardContent}>
+                  <h3 className={`${categoriesHomeStyles.cardTitleBase}
+                     ${hoveredBrand === brand.id ? categoriesHomeStyles.cardTitleHover : categoriesHomeStyles.cardTitleNormal } `}>
+                      {brand.name}
+                  </h3>
+                  {brand.tagline ? (
+                    <p className={categoriesHomeStyles.cardTagline}>
+                      {brand.tagline}
+                    </p>
+                  ): null }
+                </div>
+                <span className={categoriesHomeStyles.focusRing} />
               </div>
             </Link>
           ))}
