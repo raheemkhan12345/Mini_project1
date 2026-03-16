@@ -17,7 +17,7 @@ export const CartProvider = ({ children }) => {
   // to add item to cart
   const addItem = (item) => {
     setCart((prev) => {
-      const existing = pre.find((p) => p.id === item.id);
+      const existing = prev.find((p) => p.id === item.id);
       if (existing) {
         return prev.map((p) =>
           p.id === item.id ? { ...p, qty: p.p.qtv + 1 } : p,
