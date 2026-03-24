@@ -2,6 +2,10 @@ import React from "react";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Brand from './pages/Brand'
+import LoginPage from "./components/LoginPage";
+import SignUpPage from "./components/SignUpPage";
+import Watch from "./pages/Watch";
+
 
 
 const App = () => {
@@ -12,6 +16,9 @@ const App = () => {
         
         
         <Route path="brands/:brandName" element = {<Brand />} />
+        <Route path="/login" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/watches" element={<Watch />} />
 
       </Routes>
     </div>

@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react'
-import { testimonialPageStyles } from '../assets/dummyStyles'
+import React, { useEffect, useRef } from "react";
+import { testimonialPageStyles } from "../assets/dummyStyles";
 import T1 from "../assets/T1.png";
 import T2 from "../assets/T2.png";
 import T3 from "../assets/T3.png";
@@ -40,12 +40,10 @@ const cards = [
 ];
 
 const TestimonialsPage = () => {
-
   const scroller = useRef(null);
   const isDown = useRef(false);
   const startX = useRef(0);
   const scrollLeft = useRef(0);
-
 
   const rafRef = useRef(null);
   const targetScroll = useRef(null);
@@ -260,45 +258,58 @@ const TestimonialsPage = () => {
     startMomentum();
   };
 
-  // these all function are for smooth scroll for x-axis 
+  // these all function are for smooth scroll for x-axis
 
   return (
     <section className={testimonialPageStyles.pageSection}>
-        <div className={testimonialPageStyles.container}>
-            <h2 className={testimonialPageStyles.title} style={{fontFamily: "'Playfair Display' , serif",}}>
-                THE WATCH JOURNAL
-            </h2>
+      <div className={testimonialPageStyles.container}>
+        <h2
+          className={testimonialPageStyles.title}
+          style={{ fontFamily: "'Playfair Display' , serif" }}
+        >
+          THE WATCH JOURNAL
+        </h2>
 
-            {/* fro scrolling on x axis  */}
-            <div ref={scroller} className={testimonialPageStyles.scroller} 
-             onMouseDown={onMouseDown} onMouseLeave={onMouseLeave}
-             onMouseUp={onMouseUp} onMouseMove={onMouseMove} onTouchStart={onTouchStart}
-             onTouchMove={onTouchMove} onTouchEnd={onTouchEnd} style={{WebkitOverflowScrolling: "touch",
-                touchAction:"pan-y"
-             }}>
-                {cards.map((c)  => (
-                    <article key={c.id} className={testimonialPageStyles.card}>
-                        <div className={testimonialPageStyles.imageBlock}>
-                            <img src={c.img} alt={c.title} className={testimonialPageStyles.image} />
-                        </div>
+        {/* fro scrolling on x axis  */}
+        <div
+          ref={scroller}
+          className={testimonialPageStyles.scroller}
+          onMouseDown={onMouseDown}
+          onMouseLeave={onMouseLeave}
+          onMouseUp={onMouseUp}
+          onMouseMove={onMouseMove}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          style={{ WebkitOverflowScrolling: "touch", touchAction: "pan-y" }}
+        >
+          {cards.map((c) => (
+            <article key={c.id} className={testimonialPageStyles.card}>
+              <div className={testimonialPageStyles.imageBlock}>
+                <img
+                  src={c.img}
+                  alt={c.title}
+                  className={testimonialPageStyles.image}
+                />
+              </div>
 
-                        <div className={testimonialPageStyles.contentBlock}>
-                            <div>
-                                <h3  className={testimonialPageStyles.cardTitle}>{c.title}</h3>
-                                <p className={testimonialPageStyles.cardMeta}>{c.meta}</p>
-                                <p className={testimonialPageStyles.cardExcerpt}>{c.excerpt}</p>
-                            </div>
-                        </div>
-                    </article>
-                ))}
-             </div>
+              <div className={testimonialPageStyles.contentBlock}>
+                <div>
+                  <h3 className={testimonialPageStyles.cardTitle}>{c.title}</h3>
+                  <p className={testimonialPageStyles.cardMeta}>{c.meta}</p>
+                  <p className={testimonialPageStyles.cardExcerpt}>
+                    {c.excerpt}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
+      </div>
 
-        <style>
-            {`${testimonialPageStyles.scrollbarHide}`}
-        </style>
+      <style>{`${testimonialPageStyles.scrollbarHide}`}</style>
     </section>
-  )
-}
+  );
+};
 
-export default TestimonialsPage
+export default TestimonialsPage;
