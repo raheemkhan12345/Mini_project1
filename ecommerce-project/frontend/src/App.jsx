@@ -5,6 +5,7 @@ import Brand from './pages/Brand'
 import LoginPage from "./components/LoginPage";
 import SignUpPage from "./components/SignUpPage";
 import Watch from "./pages/Watch";
+import  Contact  from "./pages/Contact";
 
 
 
@@ -19,6 +20,7 @@ const App = () => {
         <Route path="/login" element={<LoginPage />} />
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/watches" element={<Watch />} />
+        <Route path="/contact" element={<Contact />} />
 
       </Routes>
     </div>
