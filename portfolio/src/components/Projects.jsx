@@ -1,5 +1,5 @@
 import React from "react";
-import { FaCloudSun, FaDollarSign, FaRobot } from "react-icons/fa"; 
+import { FaCloudSun, FaDollarSign, FaRobot, FaShoppingCart } from "react-icons/fa"; 
 const Projects = () => {
 
   const projectData = [
@@ -23,6 +23,12 @@ const Projects = () => {
         "A chatbot integrated using Dialogflow that answers school related questions.",
       github: "https://github.com/raheemkhan12345/Mini_project1/tree/main/SchoolChatbot",
       icon: <FaRobot className="text-6xl text-purple-400 mx-auto my-4" />
+    },
+    {
+      title : "Watch Store E-commerce website",
+      description : "A responsive and modern frontend for Watch-Store, an e-commerce website showcasing watches with smooth user interactions.",
+      github : "https://github.com/raheemkhan12345/Mini_project1/tree/main/ecommerce-project/frontend",
+      icon : <FaShoppingCart className="text-xl text-purple-400 mx-auto my-4" />
     }
   ];
 
