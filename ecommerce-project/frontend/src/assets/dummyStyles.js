@@ -171,31 +171,42 @@ export const watchOfferBannerStyles = {
 
 export const comingSoonStyles = {
   // Section styles
-  section: "bg-white text-gray-900 py-12",
+  section: "bg-gradient-to-b from-white via-gray-50 to-gray-100 text-gray-900 py-14",
   container: "max-w-7xl mx-auto px-6 lg:px-12",
-  
+
   // Header
-  headerContainer: "flex items-center justify-between mb-8",
-  titleContainer: "",
-  title: "text-2xl md:text-3xl tracking-wide uppercase",
+  headerContainer: "flex flex-col sm:flex-row sm:items-center justify-between mb-10 gap-4",
+  titleContainer: "space-y-1",
+  title:
+    "text-2xl md:text-3xl lg:text-4xl tracking-wide uppercase font-medium text-gray-900",
   titleStyle: { fontFamily: "'Playfair Display', serif" },
-  subtitle: "text-sm text-gray-500 mt-1 uppercase tracking-wider",
-  viewAllLink: "text-sm text-gray-600 hover:text-gray-900 uppercase tracking-wide",
-  
+  subtitle:
+    "text-xs sm:text-sm text-gray-500 uppercase tracking-wider",
+  viewAllLink:
+    "text-sm text-gray-600 hover:text-black uppercase tracking-wide transition-colors duration-200 hover:underline underline-offset-4",
+
   // Watches Container
-  watchesContainer: "w-full overflow-x-auto",
-  watchesRow: "flex gap-8 items-start min-w-[1100px] lg:min-w-full justify-between",
-  
+  watchesContainer:
+    "w-full overflow-x-auto scrollbar-hide pb-4",
+  watchesRow:
+    "flex gap-6 md:gap-8 items-start min-w-[1000px] lg:min-w-full",
+
   // Watch Item
-  watchItem: "flex-1 max-w-xs flex flex-col items-center",
-  imageContainer: "w-full flex justify-center",
-  image: "object-contain h-56 md:h-64 lg:h-72 xl:h-80 transition-transform transform",
-  
+  watchItem:
+    "flex-1 max-w-xs flex flex-col items-center group",
+
+  imageContainer:
+    "w-full flex justify-center overflow-hidden rounded-xl bg-white shadow-sm group-hover:shadow-md transition-all duration-300",
+  image:
+    "object-contain h-56 md:h-64 lg:h-72 xl:h-80 transition-transform duration-500 ease-out group-hover:scale-105",
+
   // Figcaption
-  figcaption: "mt-6 text-center",
-  watchName: "text-xs md:text-sm uppercase tracking-widest text-gray-700 font-semibold",
-  price: "mt-3 text-sm text-gray-600",
-  
+  figcaption: "mt-5 text-center",
+  watchName:
+    "text-xs md:text-sm uppercase tracking-widest text-gray-800 font-semibold group-hover:text-amber-600 transition-colors duration-300",
+  price:
+    "mt-2 text-sm text-gray-500",
+
   // Function for formatting (keep as helper)
   formatINR: (n) => `₹ ${n.toLocaleString("en-IN")}`
 };
@@ -272,8 +283,9 @@ export const watchPageStyles = {
   // Grid
   grid: "grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-6 sm:gap-8 md:gap-10",
   
-  // Watch Card
-  card: "group text-center",
+  // Watch Card (ONLY CHANGE HERE 👇)
+  card: "group text-center bg-white rounded-xl shadow-md hover:shadow-2xl transition-shadow duration-300",
+  
   imageContainer: "relative mx-auto max-w-[240px] w-full h-[320px] md:h-[420px]",
   image: "w-full h-full object-contain",
   
@@ -281,7 +293,7 @@ export const watchPageStyles = {
   cartControlsContainer: "absolute left-1/2 -translate-x-1/2 bottom-2",
   cartQuantityControls: "inline-flex items-center gap-2 bg-white px-3 py-2 rounded-full shadow",
   cartButton: "p-2 rounded cursor-pointer",
-  cartQuantity: "px-3 py-1 text-center font-medium", // Note: Removed min-w-[36px] as per new code
+  cartQuantity: "px-3 py-1 text-center font-medium",
   addToCartButton: "flex items-center cursor-pointer gap-2 px-4 py-2 rounded-full text-sm font-semibold bg-white shadow hover:bg-gradient-to-br from-gray-200 to-gray-400",
   addToCartIcon: "w-4 h-4",
   
@@ -291,15 +303,14 @@ export const watchPageStyles = {
   productDescription: "text-xs text-gray-500",
   productPrice: "mt-2 text-sm font-medium",
   
-  // Loading States (NEW)
+  // Loading States
   loadingText: "text-center py-12 text-gray-500",
   noWatchesText: "text-center py-12 text-gray-500",
   
-  // Quantity Controls (NEW)
+  // Quantity Controls
   quantityButton: "p-2 rounded cursor-pointer",
   quantityIcon: "w-4 h-4"
 };
-
 // Update in src/assets/dummyStyles.js
 
 export const navbarStyles = {
@@ -569,36 +580,46 @@ export const contactPageStyles = {
 
 export const categoriesHomeStyles = {
   // Layout
-  section: "min-h-screen bg-gradient-to-br from-gray-50 to-white py-12 px-4",
+  section: "min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 py-14 px-4",
   container: "max-w-7xl mx-auto",
-  
+
   // Header
-  header: "text-center mb-12",
-  h1: "font-light text-gray-900 mb-4 leading-tight",
+  header: "text-center mb-14",
+  h1: "font-light text-gray-900 mb-4 leading-tight tracking-wide",
   h1SpanRegular: "inline",
-  h1SpanAccent: "text-amber-600 ml-3 font-medium",
-  underline: "w-24 h-1 bg-gradient-to-r from-amber-400 to-amber-600 mx-auto mb-6 rounded-full",
-  subtext: "text-gray-600 max-w-2xl mx-auto text-base md:text-lg",
-  
+  h1SpanAccent: "text-amber-600 ml-2 sm:ml-3 font-semibold",
+  underline:
+    "w-20 sm:w-24 h-[3px] bg-gradient-to-r from-amber-400 via-amber-500 to-amber-600 mx-auto mb-6 rounded-full",
+  subtext:
+    "text-gray-500 max-w-2xl mx-auto text-sm sm:text-base md:text-lg leading-relaxed",
+
   // Grid
-  grid: "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6 md:gap-8",
-  
+  grid:
+    "grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-5 sm:gap-6 md:gap-8",
+
   // Cards
   cardLink: "group block focus:outline-none",
-  cardWrapper: "relative overflow-hidden rounded-xl border transition-shadow duration-300 bg-white shadow-sm hover:shadow-lg focus:shadow-lg border-gray-200",
-  imageContainer: "w-full aspect-square bg-gray-50 flex items-center justify-center overflow-hidden",
-  image: "w-full h-full object-cover transform transition-transform duration-500",
-  
+  cardWrapper:
+    "relative overflow-hidden rounded-2xl border border-gray-200 bg-white shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300 ease-out",
+
+  imageContainer:
+    "w-full aspect-square bg-gray-50 flex items-center justify-center overflow-hidden",
+  image:
+    "w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-105",
+
   // Card content
   cardContent: "p-3 md:p-4 text-center",
-  cardTitleBase: "text-sm md:text-base font-medium truncate transition-colors duration-300",
+  cardTitleBase:
+    "text-sm md:text-base font-medium truncate transition-all duration-300",
   cardTitleHover: "text-amber-600",
   cardTitleNormal: "text-gray-800",
-  cardTagline: "text-xs text-gray-500 mt-1 hidden md:block",
-  
+  cardTagline:
+    "text-xs text-gray-400 mt-1 hidden md:block tracking-wide",
+
   // Focus ring
-  focusRing: "absolute inset-0 pointer-events-none ring-0 focus:ring-4 focus:ring-amber-200",
-  
+  focusRing:
+    "absolute inset-0 pointer-events-none rounded-2xl ring-0 group-focus:ring-4 group-focus:ring-amber-200",
+
   // Inline styles
   h1FontSize: { fontSize: "clamp(1.6rem, 3.8vw, 2.75rem)" },
   playfairFont: { fontFamily: "'Playfair Display', serif" }
