@@ -27,7 +27,7 @@ const Projects = () => {
     {
       title : "Watch Store E-commerce website",
       description : "A responsive and modern frontend for Watch-Store, an e-commerce website showcasing watches with smooth user interactions.",
-      github : "https://github.com/raheemkhan12345/Mini_project1/tree/main/ecommerce-project/frontend",
+      github : "https://github.com/raheemkhan12345/Mini_project1/tree/main/ecommerce-project",
       icon : <FaShoppingCart className="text-xl text-purple-400 mx-auto my-4" />
     }
   ];
