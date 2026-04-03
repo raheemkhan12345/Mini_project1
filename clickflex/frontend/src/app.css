@@ -1,0 +1,59 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* main layout */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background-color: #000;
+
+}
+
+/* topbar */
+.topbar {
+  height: 80px;
+  flex-shrink: 0;
+}
+
+
+
+/* sidebar */
+.sidebar {
+  width: 75px;
+  transition: 0.3s;
+}
+
+/* content */
+.content {
+  flex: 1;
+  overflow-y: auto;
+  background: #000;
+  color: white;
+  margin-top: 75px;
+  margin-left: 75px;
+}
+
+/* sidebar expand */
+.sidebar:hover {
+  width: 220px;
+}
+
+
+/* responsiveness */
+@media (max-width: 768px) {
+  .topbar {
+    height: 70px;
+  }
+
+  .sidebar {
+    width: 65px;
+  }
+
+  .sidebar:hover {
+    width: 180px;
+  }
+}
