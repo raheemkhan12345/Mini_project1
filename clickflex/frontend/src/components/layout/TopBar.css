@@ -164,13 +164,42 @@
   }
 
   .search-box {
-    display: none;
+    position: relative;
+    background: transparent;
+    border: none;
+    padding: 0;
   }
 
-  .menu-btn {
-    display: block;
+  .search-box img {
+    width: 20px;
+    cursor: pointer;
+  }
+
+  .search-box input {
+    position: absolute;
+    right: 0;
+    top: 40px;
+
+    width: 0;
+    opacity: 0;
+
+    background: #111;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 8px;
+
+    transition: 0.3s ease;
+  }
+
+
+  /* when active */
+  .search-box.active input {
+    width: 180px;
+    opacity: 1;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
   }
 }
+
 
 @media (max-width: 500px) {
   .stories {

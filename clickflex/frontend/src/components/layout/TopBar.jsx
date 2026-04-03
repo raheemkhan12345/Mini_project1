@@ -1,8 +1,12 @@
 import "./topbar.css"; 
 import { FaPlus } from "react-icons/fa";
 import storiesData from "../../data/storiesData";
+import { useState } from "react";
 
 const TopBar = () => {
+  
+  const [openSearch, setOpenSearch] = useState(false)
+
   return (
     <div className="topbar">
 
@@ -30,8 +34,13 @@ const TopBar = () => {
       </div>
 
       <div className="topbar-right">
-        <div className="search-box">
-          <img src="/icons/search.png" alt="" />
+        {/* search box */}
+
+        <div className={`search-box ${openSearch ? "active" : ""}`}>
+        <img src="/icons/search.png"
+         alt=""
+         onClick={() => setOpenSearch(!openSearch)}
+          />
           <input type="text" placeholder="Search..." />
         </div>
 
