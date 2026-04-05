@@ -1,5 +1,7 @@
 import React from "react";
-
+import { FaHeart } from "react-icons/fa";
+import { FaRegComment } from "react-icons/fa";
+import { FaEllipsisH } from "react-icons/fa";
 import "./home.css";
 
 const Home = () => {
@@ -27,7 +29,7 @@ const Home = () => {
               <img src="/images/model1.jpg" alt="" />
               <span>Amir</span>
             </div>
-            <span className="dots">•••</span>
+            <span className="dots"><FaEllipsisH /></span>
           </div>
 
           <img
@@ -37,8 +39,8 @@ const Home = () => {
           />
 
           <div className="post-actions">
-            <span>❤️</span>
-            <span>💬</span>
+            <span className="like-icon"><FaHeart /></span>
+            <span className="comment-icon"><FaRegComment /></span>
           </div>
 
           <p className="likes">100 likes</p>
