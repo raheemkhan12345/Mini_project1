@@ -1,25 +1,24 @@
-import "./topbar.css"; 
+import "./topbar.css";
 import { FaPlus } from "react-icons/fa";
-import storiesData from "../../data/storiesData";
+import { storiesData } from "../../data/data";
 import { useState } from "react";
 
 const TopBar = () => {
-  
-  const [openSearch, setOpenSearch] = useState(false)
+  const [openSearch, setOpenSearch] = useState(false);
 
   return (
     <div className="topbar">
-
       <div className="topbar-left">
         <img src="/icons/logo.png" alt="logo" className="logo" />
       </div>
 
       <div className="stories">
-
         <div className="story add-story">
           <div className="circle">
             <img src="/images/user.png" alt="" />
-            <span className="plus"><FaPlus /></span>
+            <span className="plus">
+              <FaPlus />
+            </span>
           </div>
         </div>
 
@@ -30,16 +29,16 @@ const TopBar = () => {
             </div>
           </div>
         ))}
-
       </div>
 
       <div className="topbar-right">
         {/* search box */}
 
         <div className={`search-box ${openSearch ? "active" : ""}`}>
-        <img src="/icons/search.png"
-         alt=""
-         onClick={() => setOpenSearch(!openSearch)}
+          <img
+            src="/icons/search.png"
+            alt=""
+            onClick={() => setOpenSearch(!openSearch)}
           />
           <input type="text" placeholder="Search..." />
         </div>
@@ -48,7 +47,6 @@ const TopBar = () => {
           <img src="/icons/bell.png" alt="" />
         </div>
       </div>
-
     </div>
   );
 };

@@ -6,18 +6,18 @@
   color: white;
 }
 
-/* LEFT FEED */
+/* left feed */
 .feed {
   flex: 2;
   min-width: 0;
 }
 
-/* RIGHT SIDEBAR */
+/* right sidebar */
 .rightbar {
   flex: 1;
 }
 
-/* ================= BANNER ================= */
+/* banner */
 .banner {
   position: relative;
   height: 350px;
@@ -70,7 +70,6 @@
   width: fit-content;
 }
 
-/* ================= POSTS (UPDATED 🔥) ================= */
 
 .post {
   border-radius: 14px;
@@ -78,7 +77,7 @@
   margin: 25px 0;
 }
 
-/* HEADER */
+/* header */
 .post-header {
   display: flex;
   justify-content: space-between;
@@ -109,7 +108,7 @@
   cursor: pointer;
 }
 
-/* IMAGE */
+/* image  */
 .post-img {
   width: 100%;
   border-radius: 12px;
@@ -117,7 +116,7 @@
   margin: 10px 0;
 }
 
-/* ACTIONS */
+/* actions */
 .post-actions {
   display: flex;
   gap: 15px;
@@ -138,7 +137,7 @@
   color: #EA3B12;
 }
 
-/* TEXT */
+/* text */
 .likes {
   margin-top: 8px;
   font-weight: 600;
@@ -159,7 +158,7 @@
   cursor: pointer;
 }
 
-/* COMMENT */
+/* comment */
 .add-comment {
   display: flex;
   align-items: center;
@@ -184,14 +183,14 @@
   font-size: 13px;
 }
 
-/* TIME */
+/* time */
 .time {
   font-size: 11px;
   color: #777;
   margin-top: 6px;
 }
 
-/* ================= RIGHT SIDEBAR ================= */
+/* right sidebar */
 .suggested-header {
   display: flex;
   justify-content: space-between;
@@ -212,9 +211,9 @@
   cursor: pointer;
 }
 
-/* ================= RESPONSIVE ================= */
+/* responsiveness */
 
-/* TABLET */
+/* tablet */
 @media (max-width: 1024px) {
   .banner {
     height: 280px;
@@ -238,7 +237,7 @@
   }
 }
 
-/* MOBILE */
+/* mobile */
 @media (max-width: 768px) {
   .home {
     flex-direction: column;
@@ -285,7 +284,7 @@
   }
 }
 
-/* SMALL MOBILE */
+/* smaill mobile */
 @media (max-width: 480px) {
   .banner {
     height: 180px;
