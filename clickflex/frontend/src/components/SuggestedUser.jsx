@@ -1,13 +1,17 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 
-const SuggestedUser = ({user}) => {
+const SuggestedUser = ({user , onFollow}) => {
     const [isFollowing, setIsFollowing] = useState(user.isFollowing);
+
+    useEffect(() => {
+        setIsFollowing(user.isFollowing);
+    }, [user.isFollowing]);
 
 // handle follow button click
     const handleFollow = () =>{
-        setIsFollowing(!isFollowing);
-    }
+        onFollow(user.id);
+    };
   return (
     <div className='suggested-user'>
       <div className='user'>
@@ -16,7 +20,7 @@ const SuggestedUser = ({user}) => {
       </div>
 
       <button onClick={handleFollow}>
-        {isFollowing ? "Following" : "Follow"}
+        {user.isFollowing ? "Following" : "Follow"}
       </button>
     </div>
   )

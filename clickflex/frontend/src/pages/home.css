@@ -160,6 +160,14 @@
 }
 
 /* comment */
+
+.new-comment {
+  margin-top: 6px;
+    color: #ccc;
+    font-size: 14px;
+    line-height: 1.4;
+}
+
 .add-comment {
   display: flex;
   align-items: center;

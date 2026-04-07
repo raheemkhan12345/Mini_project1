@@ -27,11 +27,11 @@ export const posts = [
     username: "Muhammad Hassan",
     userImage: "/images/model2.jpg",
     postImage: "/images/post2.jpg",
-    likes: 150,
+    likes: 100,
     caption:
       "Lorem Ipsum is simply dummy text of the printing and typesetting industry.more...",
-    comments: 20,
-    time: "1 hour ago",
+    comments: 16,
+    time: "30 minutes ago",
   },
 ];
 
