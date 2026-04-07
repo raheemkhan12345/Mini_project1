@@ -36,9 +36,9 @@ export const posts = [
 ];
 
 
-// suggested user
+// suggested user (right sidebar on home page)
 
-export const suggestedUser =[
+export const suggestedUsers =[
   {
     id: 1,
     username: "Masad",
