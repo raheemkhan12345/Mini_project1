@@ -36,7 +36,7 @@ export const posts = [
 ];
 
 
-// suggested user (right sidebar on home page)
+// suggested user (right sidebar on home page) data.
 
 export const suggestedUsers =[
   {
@@ -69,4 +69,37 @@ export const suggestedUsers =[
     userImage: "/images/model5.jpg",
     isFollowing: false,
   },
+]
+
+// data for model users (model, influencer, hostess) in models page.
+
+export const modelUsers = [
+  {
+    id: 1,
+    name : "Muhammad",
+    country: "UAE",
+    type : "model",
+    image: "/images/modelUser1.jpg",
+  },
+  // {
+  //   id: 2,
+  //   name : "Ali",
+  //   country: "Egypt",
+  //   type : "model",
+  //   image: "/images/modelUser2.jpg",
+  // },
+  // {
+  //   id: 3,
+  //   name : "Khan",
+  //   country: "UAE",
+  //   type : "model",
+  //   image: "/images/modelUser3.jpg",
+  // },
+  // {
+  //   id: 4,
+  //   name : "Ahmad",
+  //   country: "UAE",
+  //   type : "model",
+  //   image: "/images/modelUser4.jpg",
+  // },
 ]

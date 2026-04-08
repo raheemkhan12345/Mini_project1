@@ -1,0 +1,158 @@
+.model-page {
+  padding: 20px;
+  background: black;
+  color: white;
+  min-height: 100vh;
+}
+
+/* tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;   
+  align-items: center;
+  margin: 0 auto 25px auto; 
+  border: 1px solid #333;
+  border-radius: 30px;
+  padding: 5px;
+  width: fit-content;       
+  background: #111;
+}
+
+/* tab item */
+.tabs span {
+  cursor: pointer;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: transparent;
+  transition: all 0.1s ease;   
+  font-size: 14px;
+}
+
+/* hover effect */
+.tabs span:hover {
+  background: #222;
+}
+
+/* active tab */
+.tabs .active {
+  background: linear-gradient(90deg, #A513B8, #EA3B12);
+  color: white;
+  transform: scale(1.05);
+}
+
+/* cards */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* card */
+.card {
+  position: relative;
+  width: 200px;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card:hover {
+  box-shadow: 0 10px 25px rgba(80, 80, 80, 0.6);
+}
+
+
+/* image */
+.card img {
+  width: 100%;
+  height: 296px;
+  object-fit: cover;
+}
+
+.img-wrapper {
+  position: relative;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 296px;
+  object-fit: cover;
+}
+
+.img-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,1) 0%,   /* top */
+    transparent 30%,
+    transparent 60%,
+    rgba(0,0,0,0.9) 100%  /* bottom */
+  );
+
+  pointer-events: none;
+}
+
+/* info */
+.info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+
+  padding: 12px;
+     background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.7),
+    rgba(0,0,0,0.2)
+  );
+}
+
+.info h4 {
+  margin: 5px 0;
+  font-size: 24px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.info p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #aaa;
+}
+
+/* responsiveness */
+
+/* tablet */
+@media (max-width: 768px) {
+  .card {
+    width: 45%;
+  }
+
+  .card img {
+    height: 200px;
+  }
+}
+
+/* mobile */
+@media (max-width: 480px) {
+  .tabs {
+    gap: 5px;
+    padding: 4px;
+  }
+
+  .tabs span {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
+
+  .card {
+    width: 100%;   
+  }
+
+  .card img {
+    height: 220px;
+  }
+}
