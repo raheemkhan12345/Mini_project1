@@ -3,35 +3,29 @@ import "./model.css";
 import { modelUsers } from "../data/data";
 
 const Models = () => {
-  // current tab
   const [activeTab, setActiveTab] = useState("model");
-  // filter users based on active tab
+  const tabs = ["model", "influencer", "hostess"];
+
+  // Filter users based on active tab
   const filterUsers = modelUsers.filter((user) => user.type === activeTab);
 
   return (
     <div className="model-page">
-      {/* tabs */}
+      {/* Tabs */}
       <div className="tabs">
-        <span
-          className={activeTab === "model" ? "active" : ""}
-          onClick={() => setActiveTab("model")}
-        >
-          Model
-        </span>
-        <span
-          className={activeTab === "influencer" ? "active" : ""}
-          onClick={() => setActiveTab("influencer")}
-        >
-          Influencer
-        </span>
-        <span
-          className={activeTab === "hostess" ? "active" : ""}
-          onClick={() => setActiveTab("hostess")}
-        >
-          Hostess
-        </span>
+        {tabs.map((type) => (
+          <button
+            key={type}
+            className={`tab-btn ${activeTab === type ? "active" : ""}`}
+            onClick={() => setActiveTab(type)}
+            onTouchStart={() => setActiveTab(type)}
+          >
+            {type.charAt(0).toUpperCase() + type.slice(1)}
+          </button>
+        ))}
       </div>
 
+      {/* Cards */}
       <div className="cards">
         {filterUsers.map((user) => (
           <div key={user.id} className="card">
