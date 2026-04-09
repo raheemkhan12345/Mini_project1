@@ -8,12 +8,12 @@
 /* tabs */
 .tabs {
   display: flex;
-  gap: 10px;
+  gap: 36px;
   justify-content: center;
   align-items: center;
   margin: 0 auto 25px auto;
   border: 1px solid #333;
-  border-radius: 30px;
+  border-radius: 8px;
   padding: 5px;
   width: fit-content;
   background: #111;
@@ -23,7 +23,7 @@
 .tabs span {
   cursor: pointer;
   padding: 8px 18px;
-  border-radius: 20px;
+  border-radius: 8px;
   background: transparent;
   transition: all 0.2s ease;
   font-weight: 400;
