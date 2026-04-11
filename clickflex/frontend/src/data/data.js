@@ -173,3 +173,35 @@ export const modelUsers = [
     image: "/images/modelUser7.jpg",
   },
 ]
+
+
+// data for casting page.
+export const castingData =[
+  {
+    id: 1,
+    type : "casting",
+    image: "images/studio1.png",
+    title: "I want a Professional Model for my Business",
+    location: "cairo, egypt",
+    date: "30 july 2024",
+    category: "paid shoot or event",
+  },
+  {
+    id: 2,
+    type : "mycasting",
+    image: "images/studio1.png",
+    title: "I want a Professional Model for my Business",
+    location: "cairo, egypt",
+    date: "30 july 2024",
+    category: "paid shoot or event",
+  },
+  {
+    id: 3,
+    type : "mycasting",
+    image: "images/studio1.png",
+    title: "I want a Professional Model for my Business",
+    location: "cairo, egypt",
+    date: "30 july 2024",
+    category: "paid shoot or event",
+  }
+]
