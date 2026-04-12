@@ -60,6 +60,10 @@
   background-clip: padding-box, border-box;
 }
 
+.casting-card:hover{
+  box-shadow: 0 10px 25px rgba(80, 80, 80, 0.6);
+}
+
 /* casting-images */
 
 .casting-img-wrapper {
