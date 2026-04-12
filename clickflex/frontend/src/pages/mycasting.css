@@ -1,0 +1,189 @@
+/* ================= PAGE ================= */
+.mycasting-page {
+  background: black;
+  color: white;
+  padding: 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* ================= CONTAINER ================= */
+.mycasting-container {
+  display: flex;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+/* ================= LEFT IMAGE ================= */
+.mycasting-left img {
+  width: 480px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 24px;
+}
+
+/* ================= RIGHT ================= */
+.mycasting-right {
+  flex: 1;
+}
+
+/* title */
+.mycasting-right h2 {
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 25px;
+  line-height: 1.2;
+  max-width: 400px;
+}
+
+/* ================= META ================= */
+.mycasting-meta {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 35px;
+  flex-wrap: wrap;
+}
+
+.mycasting-meta span {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #aaa;
+  font-size: 16px;
+}
+
+.mycasting-meta img {
+  width: 28px;
+  height: 28px;
+}
+
+/* ================= REQUIREMENTS ================= */
+.requirements-box {
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 30px;
+
+  border: 1px solid transparent;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(90deg, #A513B8, #EA3B12);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.requirements-box h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.requirements-box p {
+  color: #888;
+  font-size: 14px;
+}
+
+/* ================= PREFERENCES ================= */
+.preferences h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.pref-item {
+  margin-bottom: 15px;
+}
+
+.pref-item h4 {
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+.pref-item p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+/* ================= APPLY BUTTON ================= */
+.apply-btn-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.apply-btn {
+  padding: 14px 40px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+  background: linear-gradient(90deg, #A513B8, #EA3B12);
+  transition: 0.3s;
+}
+
+.apply-btn:hover {
+  transform: scale(1.05);
+}
+
+/* ================= RESPONSIVE ================= */
+
+/* tablet */
+@media (max-width: 1024px) {
+  .mycasting-container {
+    gap: 30px;
+  }
+
+  .mycasting-left img {
+    width: 350px;
+    height: 420px;
+  }
+
+  .mycasting-right h2 {
+    font-size: 26px;
+  }
+}
+
+/* mobile */
+@media (max-width: 768px) {
+  .mycasting-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .mycasting-left img {
+    width: 100%;
+    max-width: 500px;
+    height: 350px;
+  }
+
+  .mycasting-right {
+    width: 100%;
+    text-align: center;
+  }
+
+  .mycasting-meta {
+    justify-content: center;
+  }
+
+  .apply-btn {
+    width: 80%;
+  }
+}
+
+/* small mobile */
+@media (max-width: 480px) {
+  .mycasting-page {
+    padding: 20px;
+  }
+
+  .mycasting-left img {
+    height: 280px;
+  }
+
+  .mycasting-right h2 {
+    font-size: 22px;
+  }
+
+  .apply-btn {
+    width: 100%;
+  }
+}

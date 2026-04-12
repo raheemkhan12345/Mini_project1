@@ -188,8 +188,8 @@ export const castingData =[
   },
   {
     id: 2,
-    type : "mycasting",
-    image: "images/studio1.png",
+    type : "casting",
+    image: "images/studio2.png",
     title: "I want a Professional Model for my Business",
     location: "cairo, egypt",
     date: "30 july 2024",
@@ -197,11 +197,32 @@ export const castingData =[
   },
   {
     id: 3,
-    type : "mycasting",
-    image: "images/studio1.png",
+    type : "casting",
+    image: "images/studio3.png",
     title: "I want a Professional Model for my Business",
     location: "cairo, egypt",
     date: "30 july 2024",
     category: "paid shoot or event",
   }
 ]
+
+export const myCastingData = [
+  {
+    id: 1,
+    title: "I want a Professional Model for my Business",
+    image: "/images/studio1.png",
+    location: "Cairo, Egypt",
+    date: "30 July 2024",
+    category: "Paid shoot or event",
+
+    requirements:
+      "This is casting all requirements or description about casting",
+
+    preference: {
+      gender: "Male",
+      ethnicity: "White / Caucasic / Latino / Hispanic",
+      age: "From 24 years",
+      height: "From 172 inches",
+    }
+  }
+];

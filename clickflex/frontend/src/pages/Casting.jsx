@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./casting.css";
 import { castingData } from "../data/data";
+import MyCasting from "./MyCasting";
 
 const Casting = () => {
   const [activeTab, setActiveTab] = useState("casting");
@@ -25,6 +26,9 @@ const Casting = () => {
     </button>
   </div>
 
+  {activeTab === "mycasting" ? (
+    <MyCasting />
+  ) : (
   <div className="casting-cards">
     {filterCastingData.map((item) => (
       <div key={item.id} className="casting-card">
@@ -56,8 +60,8 @@ const Casting = () => {
       </div>
     ))}
   </div>
-</div>
-    
+  )}
+</div> 
   );
 };
 
