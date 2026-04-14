@@ -1,0 +1,180 @@
+.booking-page {
+  min-height: 100vh;
+  background: #000;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: sans-serif;
+}
+
+/* MAIN CONTAINER */
+.booking-container {
+  width: 100%;
+  max-width: 500px;
+  padding: 40px 30px;
+  border-radius: 4px;
+  position: relative;
+
+  border: 1px solid transparent;
+  background-image: linear-gradient(#000, #000),
+    linear-gradient(180deg, #A513B8, #EA3B12);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+}
+
+.booking-title {
+  text-align: center;
+  font-size: 18px;
+  font-weight: 400;
+  margin-bottom: 30px;
+}
+
+/* STEPPER */
+.booking-stepper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 30px;
+  padding: 0 10px;
+}
+
+.step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #888;
+}
+
+.step.active {
+  color: #EA3B12;
+}
+
+.step-icon {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #444;
+  font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #000;
+}
+
+.step.active .step-icon {
+  background: #EA3B12;
+}
+
+.step span {
+  font-size: 14px;
+}
+
+.step-line {
+  flex: 1;
+  height: 1px;
+  border-bottom: 1px dotted #444;
+  margin: 0 10px;
+  margin-bottom: 20px;
+}
+
+/* UPLOAD BOX */
+.upload-box {
+  width: 100%;
+  height: 200px;
+  border: 1px solid #444;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column; /* 👈 NEW */
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 25px;
+  cursor: pointer;
+  gap: 10px;
+}
+
+.plus-icon {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #555;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  color: #666;
+}
+
+/* 👇 NEW: FILE COUNT */
+.file-count {
+  font-size: 13px;
+  color: #aaa;
+}
+
+/* FORM INPUTS */
+.form-content input,
+.form-content select {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 18px;
+  background: #0000004f;
+  border: 1px solid #444;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.form-content input::placeholder {
+  color: #666;
+}
+
+/* 👇 DATE INPUT WRAPPER */
+.input-wrapper {
+  position: relative;
+}
+
+/* 👇 ADD SPACE FOR ICON */
+.input-wrapper input {
+  padding-right: 40px;
+}
+
+/* 👇 CALENDAR ICON */
+.calendar-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #888;
+  font-size: 16px;
+  pointer-events: none;
+}
+
+/* BUTTON */
+.next-btn {
+  width: 100%;
+  padding: 14px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #A513B8, #EA3B12);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.next-btn:hover {
+  opacity: 0.9;
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+  .booking-container {
+    padding: 25px 15px;
+    border: none;
+  }
+}

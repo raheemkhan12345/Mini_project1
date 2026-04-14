@@ -1,9 +1,11 @@
 import React from "react";
 import "./mycasting.css";
 import { myCastingData } from "../data/data";
+import { useNavigate } from "react-router-dom";
 
 const MyCasting = () => {
   const data = myCastingData[0];
+  const navigate = useNavigate();
 
   return (
     <div className="mycasting-page">
@@ -67,7 +69,10 @@ const MyCasting = () => {
           </div>
 
           <div className="apply-btn-wrapper">
-            <button className="apply-btn">Apply Now</button>
+            <button
+             className="apply-btn"
+             onClick={() => navigate("/booking")}
+            >Apply Now</button>
           </div>
         </div>
       </div>
