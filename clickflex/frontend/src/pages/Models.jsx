@@ -20,7 +20,6 @@ const Models = () => {
         <button
           className={`tab-btn ${activeTab === "model" ? "active" : ""}`}
           onClick={() => handleTab("model")}
-          onTouchStart={() => handleTab("model")}
         >
           Model
         </button>
