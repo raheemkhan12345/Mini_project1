@@ -27,7 +27,7 @@ const Casting = () => {
   </div>
 
   {activeTab === "mycasting" ? (
-    <MyCasting />
+    <MyCasting  />
   ) : (
   <div className="casting-cards">
     {filterCastingData.map((item) => (

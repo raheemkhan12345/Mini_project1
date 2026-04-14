@@ -4,7 +4,11 @@ import { modelUsers } from "../data/data";
 
 const Models = () => {
   const [activeTab, setActiveTab] = useState("model");
-  const tabs = ["model", "influencer", "hostess"];
+
+  // Handle tab change
+  const handleTab = (tab) => {
+    setActiveTab(tab);
+  };
 
   // Filter users based on active tab
   const filterUsers = modelUsers.filter((user) => user.type === activeTab);
@@ -13,16 +17,29 @@ const Models = () => {
     <div className="model-page">
       {/* Tabs */}
       <div className="tabs">
-        {tabs.map((type) => (
-          <button
-            key={type}
-            className={`tab-btn ${activeTab === type ? "active" : ""}`}
-            onClick={() => setActiveTab(type)}
-            onTouchStart={() => setActiveTab(type)}
-          >
-            {type.charAt(0).toUpperCase() + type.slice(1)}
-          </button>
-        ))}
+        <button
+          className={`tab-btn ${activeTab === "model" ? "active" : ""}`}
+          onClick={() => handleTab("model")}
+          onTouchStart={() => handleTab("model")}
+        >
+          Model
+        </button>
+
+        <button
+          className={`tab-btn ${activeTab === "influencer" ? "active" : ""}`}
+          onClick={() => handleTab("influencer")}
+          onTouchStart={() => handleTab("influencer")}
+        >
+          Influencer
+        </button>
+
+        <button
+          className={`tab-btn ${activeTab === "hostess" ? "active" : ""}`}
+          onClick={() => handleTab("hostess")}
+          onTouchStart={() => handleTab("hostess")}
+        >
+          Hostess
+        </button>
       </div>
 
       {/* Cards */}
