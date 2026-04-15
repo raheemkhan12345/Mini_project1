@@ -1,3 +1,6 @@
+/* bookingtalent.css */
+
+/* 1. RESET & PAGE WRAPPER */
 .booking-page {
   min-height: 100vh;
   background: #000;
@@ -5,21 +8,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  font-family: sans-serif;
+  padding: 15px;
+  font-family: 'Inter', sans-serif;
+  overflow: hidden; /* Prevents the whole page from scrolling */
 }
 
-/* MAIN CONTAINER */
+/* 2. MAIN CONTAINER */
 .booking-container {
   width: 100%;
-  max-width: 500px;
-  padding: 40px 30px;
-  border-radius: 4px;
+  max-width: 460px;
+  padding: 25px 30px; /* Reduced vertical padding to save space */
+  border-radius: 8px;
   position: relative;
-
+  box-sizing: border-box;
+  
+  /* Gradient Border Technique */
   border: 1px solid transparent;
-  background-image: linear-gradient(#000, #000),
-    linear-gradient(180deg, #A513B8, #EA3B12);
+  background-image: linear-gradient(#000, #000), 
+                    linear-gradient(180deg, #A513B8, #EA3B12);
   background-origin: border-box;
   background-clip: padding-box, border-box;
 }
@@ -27,25 +33,27 @@
 .booking-title {
   text-align: center;
   font-size: 18px;
-  font-weight: 400;
-  margin-bottom: 30px;
+  font-weight: 500;
+  margin-bottom: 20px; /* Reduced margin */
+  letter-spacing: 0.5px;
 }
 
-/* STEPPER */
+/* 3. STEPPER (Progress Bar) */
 .booking-stepper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 30px;
-  padding: 0 10px;
+  margin-bottom: 20px;
+  padding: 0 5px;
 }
 
 .step {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 8px;
-  color: #888;
+  gap: 6px;
+  color: #666;
+  transition: 0.3s;
 }
 
 .step.active {
@@ -53,10 +61,10 @@
 }
 
 .step-icon {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: #444;
+  background: #333;
   font-size: 10px;
   display: flex;
   justify-content: center;
@@ -69,112 +77,156 @@
 }
 
 .step span {
-  font-size: 14px;
+  font-size: 13px;
+  font-weight: 400;
 }
 
 .step-line {
   flex: 1;
-  height: 1px;
+  height: 0px;
   border-bottom: 1px dotted #444;
   margin: 0 10px;
-  margin-bottom: 20px;
+  margin-bottom: 18px; /* Aligns line with icons */
 }
 
-/* UPLOAD BOX */
+/* 4. UPLOAD BOX (The Scroll-Killer) */
 .upload-box {
   width: 100%;
-  height: 200px;
-  border: 1px solid #444;
+  height: 120px; /* Reduced from 200px to prevent scrolling */
+  border: 1px solid #333;
   border-radius: 12px;
   display: flex;
-  flex-direction: column; /* 👈 NEW */
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px;
+  margin-bottom: 15px;
   cursor: pointer;
   gap: 10px;
+  background: rgba(255, 255, 255, 0.02);
+  transition: 0.2s;
 }
 
-.plus-icon {
-  width: 50px;
-  height: 50px;
-  border: 2px solid #555;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 30px;
-  color: #666;
+.upload-box:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: #555;
 }
 
-/* 👇 NEW: FILE COUNT */
-.file-count {
+.upload-box svg {
+  font-size: 24px;
+  color: #888;
+}
+
+.upload-box span {
   font-size: 13px;
   color: #aaa;
 }
 
-/* FORM INPUTS */
+.upload-box.error {
+  border-color: #EA3B12;
+}
+
+/* 5. FORM FIELDS */
+.form-content {
+  display: flex;
+  flex-direction: column;
+}
+
 .form-content input,
 .form-content select {
   width: 100%;
-  padding: 12px 15px;
-  margin-bottom: 18px;
-  background: #0000004f;
-  border: 1px solid #444;
+  padding: 10px 14px; /* Tighter padding */
+  margin-bottom: 12px; /* Reduced from 18px */
+  background: #000;
+  border: 1px solid #333;
   border-radius: 8px;
   color: #fff;
-  font-size: 15px;
+  font-size: 14px;
   outline: none;
+  box-sizing: border-box;
+}
+
+.form-content input:focus,
+.form-content select:focus {
+  border-color: #A513B8;
 }
 
 .form-content input::placeholder {
-  color: #666;
+  color: #555;
 }
 
-/* 👇 DATE INPUT WRAPPER */
+/* 6. INPUT HELPERS & WRAPPERS */
 .input-wrapper {
   position: relative;
 }
 
-/* 👇 ADD SPACE FOR ICON */
-.input-wrapper input {
-  padding-right: 40px;
-}
-
-/* 👇 CALENDAR ICON */
 .calendar-icon {
   position: absolute;
   right: 12px;
-  top: 50%;
+  top: 40%; /* Adjusted for tight padding */
   transform: translateY(-50%);
-  color: #888;
-  font-size: 16px;
-  pointer-events: none;
+  color: #666;
+  font-size: 14px;
+  cursor: pointer;
 }
 
-/* BUTTON */
+.row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 5px;
+}
+
+.row div {
+  flex: 1;
+}
+
+.row label {
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 4px;
+  display: block;
+}
+
+/* 7. ERRORS & BUTTON */
+.err-msg {
+  display: block;
+  color: #EA3B12;
+  font-size: 11px;
+  margin-top: -10px;
+  margin-bottom: 10px;
+}
+
 .next-btn {
   width: 100%;
-  padding: 14px;
-  margin-top: 10px;
+  padding: 12px;
+  margin-top: 8px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background: linear-gradient(90deg, #A513B8, #EA3B12);
   color: #fff;
-  font-size: 16px;
-  font-weight: 500;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: capitalize;
   cursor: pointer;
   transition: 0.3s;
 }
 
 .next-btn:hover {
-  opacity: 0.9;
+  transform: translateY(-1px);
+  filter: brightness(1.1);
 }
 
-/* RESPONSIVE */
+/* 8. RESPONSIVE (Mobile) */
 @media (max-width: 480px) {
+  .booking-page {
+    padding: 10px;
+  }
+  
   .booking-container {
-    padding: 25px 15px;
-    border: none;
+    padding: 20px 15px;
+    border: none; /* Cleaner on small mobile screens */
+  }
+  
+  .upload-box {
+    height: 100px;
   }
 }

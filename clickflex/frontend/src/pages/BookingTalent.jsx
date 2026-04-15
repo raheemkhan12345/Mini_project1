@@ -4,10 +4,12 @@ import { FaCheck, FaPlus, FaCalendarAlt } from "react-icons/fa";
 
 const BookingTalent = () => {
   const fileInputRef = useRef(null);
+  const dateInputRef = useRef(null);
 
-  // 👉 states
+  const [currentStep, setCurrentStep] = useState(1);
   const [fileCount, setFileCount] = useState(0);
   const [files, setFiles] = useState([]);
+  const [errors, setErrors] = useState({});
 
   const [formData, setFormData] = useState({
     title: "",
@@ -15,32 +17,77 @@ const BookingTalent = () => {
     date: "",
     country: "",
     city: "",
+    gender: "",
+    ethnicity: "",
+    heightFrom: "",
+    heightTo: "",
+    ageFrom: "",
+    ageTo: "",
   });
 
-  // 👉 upload click
-  const handleUploadClick = () => {
-    fileInputRef.current.click();
-  };
+  // ✅ Arrays (Professional way)
+  const countries = ["Pakistan", "UAE", "UK"];
+  const cities = ["Peshawar", "Karachi", "Lahore"];
+  const genders = ["Male", "Female", "Other"];
 
-  // 👉 file change
+  const handleUploadClick = () => fileInputRef.current.click();
+
   const handleFileChange = (e) => {
     const selectedFiles = Array.from(e.target.files);
     setFiles(selectedFiles);
     setFileCount(selectedFiles.length);
+    if (errors.files) {
+      setErrors((prev) => ({ ...prev, files: "" }));
+    }
   };
 
-  // 👉 input change
   const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+
+    if (errors[name]) {
+      setErrors((prev) => ({ ...prev, [name]: "" }));
+    }
   };
 
-  // 👉 submit
+  const handleCalendarClick = () => {
+    try {
+      dateInputRef.current.showPicker();
+    } catch {
+      dateInputRef.current.focus();
+    }
+  };
+
+  // ✅ ENGLISH VALIDATION
+  const validate = () => {
+    const newErrors = {};
+
+    if (files.length === 0) {
+      newErrors.files = "Please upload at least one file";
+    }
+
+    if (!formData.title.trim()) newErrors.title = "Title is required";
+    if (!formData.requirements.trim())
+      newErrors.requirements = "Requirements are required";
+    if (!formData.date) newErrors.date = "Please select a date";
+    if (!formData.country) newErrors.country = "Please select a country";
+    if (!formData.city) newErrors.city = "Please select a city";
+
+    return newErrors;
+  };
+
+  const handleNext = () => {
+    const newErrors = validate();
+    if (Object.keys(newErrors).length > 0) {
+      setErrors(newErrors);
+      return;
+    }
+    setCurrentStep(2);
+  };
+
   const handleSubmit = () => {
-    console.log("Form Data:", formData);
-    console.log("Files:", files);
+    console.log("FINAL DATA:", formData);
+    console.log("FILES:", files);
   };
 
   return (
@@ -50,81 +97,150 @@ const BookingTalent = () => {
 
         {/* Stepper */}
         <div className="booking-stepper">
-          <div className="step active">
-            <div className="step-icon"><FaCheck /></div>
+          <div className={`step ${currentStep >= 1 ? "active" : ""}`}>
+            <div className="step-icon">
+              <FaCheck />
+            </div>
             <span>Basic info</span>
           </div>
           <div className="step-line"></div>
-          <div className="step">
-            <div className="step-icon"><FaCheck /></div>
+          <div className={`step ${currentStep === 2 ? "active" : ""}`}>
+            <div className="step-icon">
+              <FaCheck />
+            </div>
             <span>Model request</span>
           </div>
         </div>
 
-        <div className="form-content">
+        {/* STEP 1 */}
+        {currentStep === 1 && (
+          <div className="form-content">
+            <div
+              className={`upload-box ${errors.files ? "error" : ""}`}
+              onClick={handleUploadClick}
+            >
+              <FaPlus />
+              <span>
+                {fileCount > 0 ? `${fileCount} files selected` : "Upload files"}
+              </span>
 
-          {/* Upload */}
-          <div className="upload-box" onClick={handleUploadClick}>
-            <div className="plus-icon"><FaPlus /></div>
+              <input
+                type="file"
+                ref={fileInputRef}
+                style={{ display: "none" }}
+                multiple
+                onChange={handleFileChange}
+              />
+            </div>
+            {errors.files && <span className="err-msg">{errors.files}</span>}
 
-            {fileCount > 0 && (
-              <div className="file-count">
-                {fileCount} file(s) uploaded
-              </div>
-            )}
-
+            <input name="title" placeholder="Title" onChange={handleChange} />
             <input
-              type="file"
-              ref={fileInputRef}
-              style={{ display: "none" }}
-              multiple
-              onChange={handleFileChange}
-            />
-          </div>
-
-          {/* Inputs */}
-          <input
-            type="text"
-            name="title"
-            placeholder="Title"
-            value={formData.title}
-            onChange={handleChange}
-          />
-
-          <input
-            type="text"
-            name="requirements"
-            placeholder="Requirements"
-            value={formData.requirements}
-            onChange={handleChange}
-          />
-
-          {/* Date with icon */}
-          <div className="input-wrapper">
-            <input
-              type="date"
-              name="date"
-              value={formData.date}
+              name="requirements"
+              placeholder="Requirements"
               onChange={handleChange}
             />
-            <FaCalendarAlt className="calendar-icon" />
+
+            <div className="input-wrapper">
+              <input
+                type="date"
+                name="date"
+                ref={dateInputRef}
+                onChange={handleChange}
+              />
+              <FaCalendarAlt
+                className="calendar-icon"
+                onClick={handleCalendarClick}
+              />
+            </div>
+
+            <select name="country" onChange={handleChange}>
+              <option value="">Country</option>
+              {countries.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+
+            <select name="city" onChange={handleChange}>
+              <option value="">City</option>
+              {cities.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+
+            <button className="next-btn" onClick={handleNext}>
+              Next
+            </button>
           </div>
+        )}
 
-          <select name="country" onChange={handleChange}>
-            <option value="">Country</option>
-            <option value="Pakistan">Pakistan</option>
-          </select>
+        {/* STEP 2 (IMAGE MATCH) */}
+        {currentStep === 2 && (
+          <div className="form-content">
+            <select name="gender" onChange={handleChange}>
+              <option value="">Gender</option>
+              {genders.map((g) => (
+                <option key={g} value={g}>
+                  {g}
+                </option>
+              ))}
+            </select>
 
-          <select name="city" onChange={handleChange}>
-            <option value="">City</option>
-            <option value="Peshawar">Peshawar</option>
-          </select>
+            <input
+              name="ethnicity"
+              placeholder="Ethnicity"
+              onChange={handleChange}
+            />
 
-          {/* Submit */}
-          <button className="next-btn" onClick={handleSubmit}>
-            Next
-          </button>
-        </div>
+            {/* HEIGHT */}
+            <div className="row">
+              <div>
+                <label>Height from</label>
+                <input
+                  name="heightFrom"
+                  placeholder="160 cm"
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label>Height to</label>
+                <input
+                  name="heightTo"
+                  placeholder="190 cm"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            {/* AGE */}
+            <div className="row">
+              <div>
+                <label>Age from</label>
+                <input
+                  name="ageFrom"
+                  placeholder="23 years"
+                  onChange={handleChange}
+                />
+              </div>
+              <div>
+                <label>Age to</label>
+                <input
+                  name="ageTo"
+                  placeholder="30 years"
+                  onChange={handleChange}
+                />
+              </div>
+            </div>
+
+            <button className="next-btn" onClick={handleSubmit}>
+              Book Now
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );
