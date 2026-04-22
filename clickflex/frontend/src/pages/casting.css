@@ -1,144 +1,136 @@
-/* page */
+/* ================= PAGE CONTAINER ================= */
 .casting-page {
+  width: 100%;
+  max-width: 1200px; /* Content ko bohot phailne se rokega */
+  margin: 0 auto;
   padding: 20px;
-  background: black;
-  color: white;
-  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Tabs aur Cards ko center align karne ke liye */
 }
 
-/* casting-tabs */
-
+/* ================= TABS ================= */
 .casting-tabs {
   display: flex;
   justify-content: center;
   gap: 10px;
-  margin-bottom: 25px;
+  margin-bottom: 40px;
   border: 1px solid #333;
-  border-radius: 10px;
+  border-radius: 12px;
   padding: 6px;
-  width: fit-content;
-  margin-left: auto;
-  margin-right: auto;
-  background: #000000;
+  background: #111;
 }
 
 .casting-tab-btn {
   border: none;
-  padding: 10px 34px;
+  padding: 10px 30px;
   border-radius: 8px;
   background: transparent;
-  color: #ccc;
+  color: #888;
+  font-weight: 500;
   cursor: pointer;
-  transition: 0.3s;
-}
-
-.casting-tab-btn:hover {
-  background: #222;
+  transition: 0.3s ease;
 }
 
 .casting-tab-btn.active {
   background: linear-gradient(90deg, #A513B8, #EA3B12);
+  color: white;
 }
 
-/* casting-cards */
-
+/* ================= CARDS GRID ================= */
 .casting-cards {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
+  width: 100%;
+  justify-content: center; /* Cards ko horizontal center rakhta hai */
 }
 
 .casting-card {
-  width: calc(50% - 20px);
-  border-radius: 20px;
+  width: calc(50% - 20px); /* Ek line mein 2 cards */
+  max-width: 500px; /* Card ko bohot bara hone se rokega */
+  background: #000;
+  border-radius: 24px;
+  cursor: pointer;
   overflow: hidden;
   border: 1px solid transparent;
-  background-image:
-    linear-gradient(#000, #000),
-    linear-gradient(90deg, #A513B8, #EA3B12);
+  background-image: linear-gradient(#000, #000), linear-gradient(90deg, #A513B8, #EA3B12);
   background-origin: border-box;
   background-clip: padding-box, border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.casting-card:hover{
-  box-shadow: 0 10px 25px rgba(80, 80, 80, 0.6);
+.casting-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(165, 19, 184, 0.2);
 }
 
-/* casting-images */
-
+/* ================= IMAGE ================= */
 .casting-img-wrapper {
-  padding: 12px;
+  padding: 15px;
 }
 
 .casting-img-wrapper img {
   width: 100%;
-  height: 420px;
+  height: 380px;
   object-fit: cover;
-  border-radius: 16px;
+  border-radius: 18px;
 }
 
-/* casting-info */
-
+/* ================= INFO SECTION ================= */
 .casting-info {
-  padding: 15px 20px 25px;
-  text-align: center;
+  padding: 10px 25px 25px;
+  text-align: left; /* Alignment left behtar lagti hai info ke liye */
 }
 
 .casting-info h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  font-size: 22px;
+  margin-bottom: 15px;
+  color: white;
 }
 
 .casting-meta {
   display: flex;
-  gap: 50px;
-  margin-bottom: 10px;
+  gap: 30px;
+  margin-bottom: 15px;
 }
 
-.casting-meta span,
-.casting-info p {
+.casting-meta span, 
+.casting-category {
   display: flex;
   align-items: center;
-  gap: 8px;
-  font-size: 19px;
-  color: #ddd;
+  gap: 10px;
+  font-size: 15px;
+  color: #bbb;
 }
 
-.casting-meta img,
-.casting-info p img {
-  width: 46px;
-  height: 46px;
+.casting-meta img, 
+.casting-category img {
+  width: 20px; /* Icons ko thora chota kiya hai taake elegant lagein */
+  height: 20px;
+  filter: brightness(0) invert(1); /* Icons white karne ke liye */
 }
 
+/* ================= RESPONSIVE ================= */
 
-
-/* responsiveness */
-
-/* tablet */
-@media (max-width: 992px) {
+@media (max-width: 1024px) {
   .casting-card {
-    width: calc(50% - 20px);
-
-  }
-
-  .casting-img-wrapper img {
-    height: 350px;
+    width: calc(50% - 15px);
   }
 }
 
-/* mobile */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .casting-card {
-    width: 100%;
+    width: 100%; /* Mobile par full width */
+    max-width: 100%;
   }
-
+  
   .casting-img-wrapper img {
-    height: 280px;
+    height: 300px;
   }
 
   .casting-meta {
     flex-direction: column;
-    gap: 14px;
+    gap: 10px;
   }
-
 }

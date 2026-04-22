@@ -5,6 +5,34 @@
   padding: 40px;
   min-height: 100vh;
   box-sizing: border-box;
+  /* Sidebar ki wajah se margin-left add karna pad sakta hai agar wo fixed hai */
+  /* margin-left: 250px;  <-- Agar sidebar fixed hai to isko uncomment karein */
+}
+
+.mycasting-nav {
+  max-width: 1200px;
+  margin: 0 auto 20px auto;
+  display: flex;
+}
+
+.back-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid #444;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.back-btn:hover {
+  background: white;
+  color: black;
+  border-color: white;
 }
 
 /* ================= CONTAINER ================= */
@@ -14,6 +42,7 @@
   max-width: 1200px;
   margin: 0 auto;
   align-items: flex-start;
+  
 }
 
 /* ================= LEFT IMAGE ================= */
@@ -57,6 +86,8 @@
 .mycasting-meta img {
   width: 28px;
   height: 28px;
+  /* Icons ko white karne ke liye (agar wo dark hain) */
+  filter: brightness(0) invert(1); 
 }
 
 /* ================= REQUIREMENTS ================= */

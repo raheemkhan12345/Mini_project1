@@ -1,6 +1,5 @@
 import React from "react";
-import {BrowserRouter, Route, Routes, useLocation} from "react-router-dom"
-
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 import LeftSideNav from "./components/layout/LeftSideNav";
@@ -8,35 +7,37 @@ import Models from "./pages/Models";
 import Casting from "./pages/Casting";
 import Menu from "./pages/Menu";
 import TopBar from "./components/layout/TopBar";
-import "./app.css"
 import BookingTalent from "./pages/BookingTalent";
 import MyCasting from "./pages/MyCasting";
+import "./app.css";
 
-// for seperate layout component
 const Layout = ({ children }) => {
   const location = useLocation();
-  // topbar hide on booking talent page
-  const hideTopBar = location.pathname === "/booking";
+  const hideTopBar = location.pathname === "/booking" || location.pathname.startsWith("/mycasting");
+
   return (
     <div className="layout">
-      {!hideTopBar && (
-      <div className="topbar">
-        <TopBar />
-      </div>
-      )}
-
-      <div className="sidebar">
+      {/* Sidebar - Fixed Left */}
+      <aside className="sidebar">
         <LeftSideNav />
-      </div>
+      </aside>
 
-      <div className="content">
-        {children}
-      </div>
-
+      {/* Main Wrapper - Dynamic Right Area */}
+      <main className="main-wrapper">
+        {!hideTopBar && (
+          <header className="topbar">
+            <TopBar />
+          </header>
+        )}
+        
+        {/* Pages Content */}
+        <section className="content">
+          {children}
+        </section>
+      </main>
     </div>
-  )
-}
-
+  );
+};
 
 const App = () => {
   return (
@@ -47,7 +48,7 @@ const App = () => {
           <Route path="/models" element={<Models />} />
           <Route path="/casting" element={<Casting />} />
           <Route path="/menu" element={<Menu />} />
-          <Route path="/mycasting" element={<MyCasting />} />
+          <Route path="/mycasting/:id" element={<MyCasting />} />
           <Route path="/booking" element={<BookingTalent />} />
           <Route path="*" element={<NotFound />} />
         </Routes>

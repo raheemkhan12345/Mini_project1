@@ -176,53 +176,59 @@ export const modelUsers = [
 
 
 // data for casting page.
-export const castingData =[
-  {
-    id: 1,
-    type : "casting",
-    image: "images/studio1.png",
-    title: "I want a Professional Model for my Business",
-    location: "cairo, egypt",
-    date: "30 july 2024",
-    category: "paid shoot or event",
-  },
-  {
-    id: 2,
-    type : "casting",
-    image: "images/studio2.png",
-    title: "I want a Professional Model for my Business",
-    location: "cairo, egypt",
-    date: "30 july 2024",
-    category: "paid shoot or event",
-  },
-  {
-    id: 3,
-    type : "casting",
-    image: "images/studio3.png",
-    title: "I want a Professional Model for my Business",
-    location: "cairo, egypt",
-    date: "30 july 2024",
-    category: "paid shoot or event",
-  }
-]
+// data.js
 
-export const myCastingData = [
+export const castingData = [
   {
     id: 1,
-    title: "I want a Professional Model for my Business",
-    image: "/images/studio1.png",
+    type: "casting",
+    title: "Fashion Week Model Search",
+    image: "/images/studio1.png", // Path fixed as per your previous requirement
     location: "Cairo, Egypt",
     date: "30 July 2024",
     category: "Paid shoot or event",
-
-    requirements:
-      "This is casting all requirements or description about casting",
-
+    requirements: "This is casting all requirements or description about casting",
     preference: {
       gender: "Male",
       ethnicity: "White / Caucasic / Latino / Hispanic",
       age: "From 24 years",
-      height: "From 172 inches",
+      height: "From 172 inches"
+    }
+  },
+  {
+    id: 2,
+    type: "casting",
+    title: "Commercial TV Ad",
+    image: "/images/studio2.png",
+    location: "Abu Dhabi",
+    date: "12 Nov 2026",
+    category: "Contract Based",
+    requirements: "Looking for fresh faces for a telecommunication brand advertisement.",
+    preference: {
+      gender: "Male / Female",
+      ethnicity: "Middle Eastern",
+      age: "20-35",
+      height: "Any"
+    }
+  },
+  {
+    id: 3,
+    type: "mycasting", 
+    title: "Jewelry Brand Shoot",
+    image: "/images/studio3.png",
+    location: "Sharjah",
+    date: "05 Dec 2026",
+    category: "Premium Paid",
+    requirements: "High-end jewelry brand shoot. Needs elegant hand and face features.",
+    preference: {
+      gender: "Female",
+      ethnicity: "Any",
+      age: "22-30",
+      height: "5'6\"+"
     }
   }
 ];
+
+// SIRF EK BAAR EXPORT KAREIN:
+// Ye line automatic un items ko nikal legi jinka type 'mycasting' hai
+export const myCastingData = castingData.filter(item => item.type === "mycasting");

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./model.css";
 import { modelUsers } from "../data/data";
 
+
 const Models = () => {
   const [activeTab, setActiveTab] = useState("model");
 
