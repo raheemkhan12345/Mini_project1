@@ -9,8 +9,8 @@ const Footer = () => {
   return (
     <footer className="w-full bg-[#1c263b] text-slate-400 pt-20 pb-8 relative overflow-hidden border-t border-slate-800/60">
       {/* Soft Ambient Mesh Lights - Balanced Contrast */}
-      <div className="absolute top-0 right-1/4 w-[400px] h-[200px] bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-10 w-[300px] h-[150px] bg-cyan-500/5 rounded-full blur-[90px] pointer-events-none"></div>
+      <div className="absolute top-0 right-1/4 w-100 h-50 bg-indigo-500/10 rounded-full blur-[100px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-10 w-75 h-37.5 bg-cyan-500/5 rounded-full blur-[90px] pointer-events-none"></div>
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
         
